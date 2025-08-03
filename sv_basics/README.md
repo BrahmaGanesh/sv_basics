@@ -6,12 +6,14 @@ This repository provides a clean, beginner-friendly collection of SystemVerilog 
 
 ## 📁 Project Structure
 
-| File              | Description                                  |
-|-------------------|----------------------------------------------|
-| `style_guide.md`  | SystemVerilog coding conventions             |
-| `counter.sv`      | Parameterized up-counter                     |
-| `mux2to1.sv`      | Parameterized 2-to-1 multiplexer             |
-| `...`             | More modules coming daily (DFF, ALU, FSM...) |
+| File                | Description                                  |
+|---------------------|----------------------------------------------|
+| `style_guide.md`    | SystemVerilog coding conventions             |
+| `counter.sv`        | Parameterized up-counter                     |
+| `mux2to1.sv`        | Parameterized 2-to-1 multiplexer             |
+| `dff_async.sv`      | D Flip-Flop with asynchronous active-low reset |
+| `decoder_3to8.sv`   | 3-to-8 binary decoder                        |
+| `...`               | More modules coming daily (Encoders, FSMs...)|
 
 ---
 
@@ -37,14 +39,14 @@ This repository provides a clean, beginner-friendly collection of SystemVerilog 
 - `always_comb` for combinational logic
 - Parameterized modules
 - Active-low reset convention
-- Multiplexers and counters
+- Multiplexers, counters, flip-flops, decoders
 
 ---
 
 ## 📌 Upcoming Modules
 
-- D Flip-Flop with async reset
-- Decoders, Encoders, FSMs
+- Encoders, Priority Encoders
+- FSMs (Traffic Light Controller)
 - ALU, Shift Registers, Arbiters
 
 ---
@@ -52,5 +54,5 @@ This repository provides a clean, beginner-friendly collection of SystemVerilog 
 ## 👨‍💻 Author
 
 **Brahma Ganesh Katrapalli** – Passionate about VLSI & ASIC Verification.  
-Connect with me on [LinkedIn](www.linkedin.com/in/katrapallibrahmaganesh)  
+Connect with me on [LinkedIn](https://www.linkedin.com/in/katrapallibrahmaganesh)  
 ⭐ Star the repo if you find it helpful!
