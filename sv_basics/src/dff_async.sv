@@ -5,7 +5,7 @@ module dff_async(
     input logic clk,  // Clock input
     input logic rst_n,// Asynchronous active-low reset
     input logic d,    // Data input
-    input logic q     // Data Output
+    output logic q     // Data Output
 );
 
 always_ff @(posedge clk or negedge rst_n)begin
