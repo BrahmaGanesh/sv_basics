@@ -1,30 +1,31 @@
 # SystemVerilog Coding Style Guide ✍️
 
-This guide defines consistent coding conventions for writing SystemVerilog code in this repository.  
-Following these practices ensures your RTL design is **readable**, **reusable**, and **review-friendly**.
+This guide defines **consistent** coding conventions for writing SystemVerilog RTL and Testbench code in this repository.  
+Following these practices ensures your design is **readable**, **reusable**, and **review-friendly**.
 
 ---
 
-## 📁 1. File Naming
+## 1️⃣ File Naming
 
-- Use lowercase + underscores:  
+- Use **lowercase with underscores** for all filenames:  
   ✅ `counter.sv`, `mux2to1.sv`, `priority_encoder.sv`  
-- Avoid camelCase or spaces in filenames
+- Avoid CamelCase, spaces, or hyphens in filenames.
 
 ---
 
-## 🧱 2. Module Declaration Style
+## 2️⃣ Module Declaration Style
 
-- Use consistent formatting with proper alignment
-- Keep parameterized modules clean and readable
+- Use clean, aligned formatting for module headers.
+- Always include port directions, types, and names clearly.
 
 ```systemverilog
 module module_name #(
   parameter WIDTH = 8
 )(
-  input  logic clk,
-  input  logic rst_n,
-  ...
+  input  logic              clk,
+  input  logic              rst_n,
+  input  logic [WIDTH-1:0]  data_in,
+  output logic [WIDTH-1:0]  data_out
 );
 
 ## 3. 🧠 Naming Conventions
@@ -37,6 +38,7 @@ Use consistent naming styles across all modules and files.
 | Parameters      | UPPERCASE       | `WIDTH`           |
 | Ports & signals | snake_case      | `data_out`, `clk` |
 | Constants       | UPPERCASE       | `DEFAULT_VALUE`   |
+| Testbench UUT   | uut             | my_module uut(...)|
 
 
 4. 🔁 Clock & Reset Conventions
@@ -68,7 +70,7 @@ end
 
 - Add a brief description at the top of every module
 - Use inline comments for key logic only
-- Comment blocks should be meaningful, not excessive
+- Avoid over-commenting obvious lines.
 
 // counter.sv
 // Parameterized up-counter with enable and async reset
@@ -90,8 +92,17 @@ output logic [3:0] data_out
 - Keep modules short, single-purpose, and well-documented
 - Use parameter instead of magic numbers
 
-9. 🧪 Simulation Tips
+9️. Testbench Guidelines
+- Testbench directory: tb/
+- Name TB as <module_name>_tb.sv
+- Always instantiate DUT as uut
 
-- Use $display, $monitor, $dumpvars, and $finish in testbenches
-- Print useful debug info with module or testbench name
-- Add simple assertions to validate design behavior (if needed)
+my_module uut (
+  .clk    (clk),
+  .rst_n  (rst_n),
+  .data_in(data_in),
+  .data_out(data_out)
+);
+- Use $display, $monitor, $dumpvars, $finish for debug & waveform dumping.
+- Print TB name in logs for clarity.
+- Add simple assertions for quick bug detection.

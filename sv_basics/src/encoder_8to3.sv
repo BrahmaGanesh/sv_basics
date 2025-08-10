@@ -2,12 +2,12 @@
 // 8-to-3 binary encoder
 
 module encoder_8to3 (
-  input  logic [7:0] in,   // 8 input lines
-  output logic [2:0] out   // 3-bit binary output
+  input  logic [7:0] in,   
+  output logic [2:0] out  
 );
 
   always_comb begin
-    out = 3'b000;  // Default value
+    out = 3'b000;
     case (1'b1)
       in[0]: out = 3'b000;
       in[1]: out = 3'b001;

@@ -2,16 +2,15 @@
 // 8-to-3 priority encoder (highest index gets priority)
 
 module priority_encoder (
-  input  logic [7:0] in,   // 8 input lines
-  output logic [2:0] out,  // 3-bit encoded output
-  output logic       valid // Indicates if any input is high
+  input  logic [7:0] in,   
+  output logic [2:0] out,  
+  output logic       valid
 );
 
   always_comb begin
     out   = 3'b000;
     valid = 1'b0;
 
-    // Highest priority input comes first
     casex (in)
       8'b1xxxxxxx: begin out = 3'b111; valid = 1'b1; end
       8'b01xxxxxx: begin out = 3'b110; valid = 1'b1; end

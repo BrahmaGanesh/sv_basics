@@ -1,62 +1,85 @@
 # SystemVerilog Basics 🚀
 
-This repository provides a clean, beginner-friendly collection of SystemVerilog modules along with a coding style guide. It's designed to help students, interns, and entry-level engineers learn and follow consistent design practices.
+A clean, beginner-friendly collection of SystemVerilog RTL modules **with testbenches** and a **coding style guide**.  
+Perfect for **students**, **interns**, and **entry-level engineers** aiming to master ASIC/FPGA fundamentals while following consistent, industry-inspired coding practices.
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
 
-| File                     | Description                                      |
-|--------------------------|--------------------------------------------------|
-| `style_guide.md`         | SystemVerilog coding conventions                 |
-| `counter.sv`             | Parameterized up-counter                         |
-| `mux2to1.sv`             | Parameterized 2-to-1 multiplexer                 |
-| `dff_async.sv`           | D Flip-Flop with asynchronous active-low reset   |
-| `decoder_3to8.sv`        | 3-to-8 binary decoder                            |
-| `encoder_8to3.sv`        | Simple 8-to-3 encoder (no priority)              |
-| `priority_encoder.sv`    | 8-to-3 priority encoder with valid output        |
-| `...`                    | More modules coming daily (FSM, ALU, Arbiter...) |
-| `fsm_traffic_light.sv`   | Traffic light controller FSM                     |
-| `arbiter_round_robin.sv` | 4-way Round Robin Arbiter                        |
+sv_basics/
+├── src/ # RTL source files
+│ ├── alu.sv
+│ ├── counter.sv
+│ ├── mux2to1.sv
+│ ├── dff_async.sv
+│ ├── decoder_3to8.sv
+│ ├── encoder_8to3.sv
+│ ├── priority_encoder.sv
+│ ├── shift_register.sv
+│ ├── fsm_traffic_light.sv
+│ └── arbiter_round_robin.sv
+│
+├── tb/ # Testbench files
+│ ├── alu_tb.sv
+│ ├── counter_tb.sv
+│ ├── mux2to1_tb.sv
+│ ├── dff_async_tb.sv
+│ ├── decoder_3to8_tb.sv
+│ ├── encoder_8to3_tb.sv
+│ ├── priority_encoder_tb.sv
+│ ├── shift_register_tb.sv
+│ ├── fsm_traffic_light_tb.sv
+│ └── arbiter_round_robin_tb.sv
+│
+├── style_guide.md
+└── README.md
 
 
 ---
 
 ## 🎯 Goals
 
-- ✅ Promote clean and reusable SV coding
-- ✅ Provide example modules that are easy to simulate and learn
-- ✅ Build a strong foundation for ASIC/FPGA/VLSI roles
+- ✅ Promote **clean and reusable** SystemVerilog code  
+- ✅ Provide **ready-to-run RTL + TB examples**  
+- ✅ Build **strong fundamentals** for ASIC/FPGA/VLSI interviews  
+- ✅ Follow a **consistent style guide** for professional readability  
 
 ---
 
-## 🛠️ How to Use
+## 🛠 How to Use
 
-1. Refer to `style_guide.md` to follow consistent code practices
-2. Explore each module (`.sv`) and simulate with your own testbenches
-3. Clone the repo and contribute with improvements if desired!
-
----
-
-## 🧠 Concepts Covered (So Far)
-
-- `always_ff` for synchronous logic
-- `always_comb` for combinational logic
-- Parameterized modules
-- Active-low reset convention
-- Multiplexers, counters, flip-flops, decoders, encoders
+1. **Read** `style_guide.md` for naming, formatting, and RTL/TB best practices.  
+2. **Simulate** any module using your favorite simulator (e.g., Icarus Verilog, ModelSim, QuestaSim, Verilator).  
+3. **Modify & extend** testbenches to improve coverage.  
+4. **Contribute** by adding new modules or improving existing ones.  
 
 ---
 
-## 📌 Upcoming Modules
+## 📚 Concepts Covered
 
-- FSMs (Traffic Light Controller)
-- ALU, Shift Registers, Arbiters
+- `always_ff` for sequential logic  
+- `always_comb` for combinational logic  
+- Parameterized designs  
+- Active-low asynchronous reset conventions  
+- Standard modules: counters, muxes, encoders, decoders  
+- FSM design  
+- Arbitration logic  
+- ALU & shift registers  
+
+---
+
+## 📌 Upcoming
+
+- More FSM examples  
+- Advanced ALU operations  
+- Bus interface modules  
+- Parameterized FIFO  
 
 ---
 
 ## 👨‍💻 Author
 
-**Brahma Ganesh Katrapalli** – Passionate about VLSI & ASIC Verification.  
-Connect with me on [LinkedIn](https://www.linkedin.com/in/katrapallibrahmaganesh)  
-⭐ Star the repo if you find it helpful!
+**Brahma Ganesh Katrapalli** – Passionate about VLSI & ASIC Verification  
+📎 [LinkedIn](https://www.linkedin.com/in/katrapallibrahmaganesh)  
+⭐ Star this repo if you find it useful!
